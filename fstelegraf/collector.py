@@ -54,7 +54,7 @@ class FreeSWITCHMetricsCollector(object):
                             help='FreeSWITCH ESL Password')
         args = parser.parse_args()
         self.fs = greenswitch.InboundESL(host=args.host,
-                                         port=args.port,
+                                         port=int(args.port),
                                          password=args.secret)
         self.fs.connect()
 
